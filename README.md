@@ -1,12 +1,13 @@
 ## MY PROJECT 1
 
 Dear Peer Grader.  
-Please note that my results are in the folder titled <b>Project 1 code and Results<b>
+Please note that my results are in the folder titled <b>"Project 1 code and Results"<b>
 
 Thanks for taking the time to grade this, good luck on your project!
 
+--------------------------------------------------------------------------------------------
 
-
+## Introduction
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
