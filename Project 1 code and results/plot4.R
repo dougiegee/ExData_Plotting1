@@ -8,19 +8,19 @@ names(dat)<-names(read.table("household_power_consumption.txt", header=TRUE, nro
 close(con)
 
 #recode date data (i created a day of week column, but didnt end up needing it)
-dat$date.time<-strptime(paste(dat$Date,dat$Time),format="%d/%m/%Y %H:%M:%S")
-dat$day<-format(dat$date.time, "%a")
+dat$datetime<-strptime(paste(dat$Date,dat$Time),format="%d/%m/%Y %H:%M:%S")
+dat$day<-format(dat$datetime, "%a")
 
 # create the 4 plots in a 2 x 2 layout
 png(filename="plot4.png")
 par(mfrow=c(2,2))
 with(dat, {
-  plot(date.time, Global_active_power, type="l", ylab="Global Active Power",xlab="")
-  plot(date.time, Voltage, type="l", ylab="Voltage")
-  plot(date.time, Sub_metering_1, type="l",ylab="Energy sub metering", xlab="")
-  lines(date.time, Sub_metering_2, col="red", xlab="")
-  lines(date.time, Sub_metering_3, col="blue", xlab="")
+  plot(datetime, Global_active_power, type="l", ylab="Global Active Power",xlab="")
+  plot(datetime, Voltage, type="l", ylab="Voltage")
+  plot(datetime, Sub_metering_1, type="l",ylab="Energy sub metering", xlab="")
+  lines(datetime, Sub_metering_2, col="red", xlab="")
+  lines(datetime, Sub_metering_3, col="blue", xlab="")
   legend("topright",lty=1, col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
-  plot(date.time, Global_reactive_power, type="l")
+  plot(datetime, Global_reactive_power, type="l")
 })
 dev.off()
